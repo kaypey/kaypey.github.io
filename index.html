@@ -129,15 +129,12 @@
            });
  
            function UpdateDimensions() {
-              try {
-                  var height = $("#content").height() + 30;
+                  var height = "500px";
                   var width = "100px";
-                   var ReferalUrl = "http://www.w3schools.com";
+                  var ReferalUrl = "http://www.w3schools.com";
      
                   if (window.postMessage && ReferalUrl != undefined)
                      parent.postMessage(height + "," + width, ReferalUrl);
-              } catch (c) {
-                 alert(c.message);
-              }             
+                   
             }
          </script> 
