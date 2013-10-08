@@ -121,28 +121,11 @@
           <BR>
           http://sheldonbrown.com/web_sample1.html
         </body>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>
-          alert("CCCCCCC");
-          $(window).load(function ()
-          {
-            UpdateDimensions();
-          });
- 
-          function UpdateDimensions()
-            {
-              try
-                {
-                  var height = $("#form1").height() + 30;
-                  var width = $(".SiteIntegrationSizePanel").outerWidth() + 100;
-     
-              if (window.postMessage && ReferalUrl != undefined)
-              parent.postMessage(height + "," + width, ReferalUrl);
-              }
-              catch (c)
-              {
-              alert(c.message);
-              }
-              alert("BBBBBBB");
-            }
-        </script>
+	function getElementHeight(obj){
+		var height = Math.max(obj.scrollHeight, obj.offsetHeight, obj.scrollHeight);
+		return height;
+	}
+	var documentHeight = getElementHeight(document.getElementsByTagName('body')[0]);
+	window.parent.document.getElementById('myIframe').height=documentHeight+20+'px';
+</script> 
