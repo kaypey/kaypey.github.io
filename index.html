@@ -107,12 +107,14 @@
 	          }
 
             function getDocumentHeight() {
+            	console.log('entered function');
               try {
 		              var ReferalUrl = "http://book.aircanada.com/"  
                   var height = getElementHeight(document.getElementsByTagName('body')[0]);                                    
                   if (window.postMessage && ReferalUrl != undefined)
                      parent.postMessage(height, ReferalUrl);
               } catch (c) {
+              	console.log(c)
               }
             } 
 
