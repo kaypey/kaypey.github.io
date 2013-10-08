@@ -122,12 +122,10 @@
           http://sheldonbrown.com/web_sample1.html
         </body>
          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
-         <script>
--           alert("AAAAAAA");
-+           alert("CCCCCCC");
+         <script>           
             
-+           $(window).load(function () {
-+             UpdateDimensions();
++           $(window).load(function() {
++             UpdateDimensions()
 +           });
 + 
 +           function UpdateDimensions() {
@@ -140,7 +138,6 @@
     +                 parent.postMessage(height + "," + width, ReferalUrl);
     +          } catch (c) {
 +                 alert(c.message);
-+              }
-+               alert("BBBBBBB");
++              }+              
 +            }
          </script> 
