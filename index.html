@@ -124,20 +124,20 @@
          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
          <script>           
             
-+           $(window).load(function(){
-+             UpdateDimensions()
-+           });
-+ 
-+           function UpdateDimensions() {
-+              try {
-+                  var height = $("#content").height() + 30;
-+                  var width = "100px";
+           $(window).load(function(){
+             UpdateDimensions()
+           });
+ 
+           function UpdateDimensions() {
+              try {
+                  var height = $("#content").height() + 30;
+                  var width = "100px";
                    var ReferalUrl = "http://www.w3schools.com";
-+     
-    +              if (window.postMessage && ReferalUrl != undefined)
-    +                 parent.postMessage(height + "," + width, ReferalUrl);
-    +          } catch (c) {
-+                 alert(c.message);
-+              }+              
-+            }
+     
+                  if (window.postMessage && ReferalUrl != undefined)
+                     parent.postMessage(height + "," + width, ReferalUrl);
+              } catch (c) {
+                 alert(c.message);
+              }             
+            }
          </script> 
