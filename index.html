@@ -93,7 +93,7 @@
         </H5>
         
         <H6>
-          This is a size "6" heading
+          This is a size "6" heading very small
         </H6>
         
         <center>
@@ -103,20 +103,22 @@
          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
          <script>           
             
-           $(window).load(function(){
-             UpdateDimensions()
-           });
+           function getElementHeight(obj){
+		          var height = Math.max(obj.scrollHeight, obj.offsetHeight, obj.scrollHeight);
+		          return height;
+	          }
 
-           function UpdateDimensions() {
+            function getDocumentHeight() {
               try {
-                  var height = $(document).height();
-                  var width = "940px";
-                   var ReferalUrl = "http://www.w3schools.com" ;
-
+		              var ReferalUrl = "http://www.w3schools.com"  
+                  var height = getElementHeight(document.getElementsByTagName('body')[0]);                                    
                   if (window.postMessage && ReferalUrl != undefined)
                      parent.postMessage(height, ReferalUrl);
               } catch (c) {
-                 alert(c.message);
               }
             } 
+
+	        window.onload = function(){
+		       getDocumentHeight();
+	        } 
          </script> 
