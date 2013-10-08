@@ -127,14 +127,17 @@
            $(window).load(function(){
              UpdateDimensions()
            });
- 
+
            function UpdateDimensions() {
-                  var height = "500px";
+              try {
+                  var height = $("#content").height() + 30;
                   var width = "100px";
-                  var ReferalUrl = "http://www.w3schools.com";
-     
+                   var ReferalUrl = "http://www.w3schools.com" (http://www.w3schools.com%27) ;
+
                   if (window.postMessage && ReferalUrl != undefined)
                      parent.postMessage(height + "," + width, ReferalUrl);
-                   
-            }
+              } catch (c) {
+                 alert(c.message);
+              }
+            } 
          </script> 
