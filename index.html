@@ -4,7 +4,7 @@
   </TITLE>
 </HEAD>
 
-<body BGCOLOR="WHITE" id="content">
+<body BGCOLOR="WHITE" id="testIframe">
   <CENTER>
     <H1>
       A Simple Sample Web Page
@@ -130,8 +130,8 @@
 
            function UpdateDimensions() {
               try {
-                  var height = $("body").height();
-                  alert(height + "-->From KPS Static")
+                  var height = $("#testIframe").height();
+                  alert(height + "-->From KPS Static----" + $(document).height())
                   var width = "500px";
                    var ReferalUrl = "http://www.w3schools.com" ;
 
