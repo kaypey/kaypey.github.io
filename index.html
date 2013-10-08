@@ -93,7 +93,7 @@
         </H5>
         
         <H6>
-          This is a size "6" heading very small yeah
+          This is a size "6" heading very small Oh yeah
         </H6>
         
         <center>
@@ -104,8 +104,8 @@
          <script>           
             
            function getElementHeight(obj){
-		          obj.height();
-		          return height;
+		          var height = Math.max(obj.scrollHeight, obj.offsetHeight, obj.scrollHeight);
+		         return height;
 	          }
 
             function getDocumentHeight() {
