@@ -16,6 +16,12 @@
     <H2>
       Demonstrating a few HTML features DDDD
     </H2>
+    <p>TEST</p>
+      <p>TEST</p>
+        <p>TEST</p>
+          <p>TEST</p>
+            <p>TEST</p>
+              <p>TEST</p>
     
   </CENTER>
   
@@ -23,27 +29,21 @@
         </body>
          <script>           
             
-           function getElementHeight(obj){
-		          var height = Math.max(obj.scrollHeight, obj.offsetHeight, obj.scrollHeight);
-		         return height;
-	          }
+            var siteURL = 'http://staging.mytravelpurl.com/IframePurl/';
+    var ReferalUrl = '*';
+    var URN = 'd156248a-83b1-4bdf-a5dd-2e2b93059831';
 
-            function getDocumentHeight() {
-            	console.log('entered function');
-              try {
-		              var ReferalUrl = "https://book.aircanada.com"  
-                  var height = getElementHeight(document.getElementsByTagName('body')[0]); 
-                  console.log('height function'+ height);
-                  if (window.postMessage && ReferalUrl != undefined){
-                  	console.log('ReferalUrl function'+ ReferalUrl);
-                        parent.postMessage(height, ReferalUrl);
-                  }
-              } catch (c) {
-              	console.log(c)
-              }
-            } 
+    function ReloadParent(url, extraParms) {
 
-	        window.onload = function(){
-		       getDocumentHeight();
-	        } 
+        if (window.parent != null && window.parent.postMessage) {
+            url = siteURL + url + "?URN=" + URN;
+            
+            if (typeof (extraParms) != "undefined" && extraParms != null) {
+                if (extraParms.indexOf("&") != 0)
+                    url = url + "&" + extraParms;
+            }
+            window.parent.postMessage(url, ReferalUrl);
+        }
+    }
+
          </script> 
